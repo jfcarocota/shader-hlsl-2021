@@ -1,4 +1,4 @@
-Shader "Custom/SolidTextureColor"
+Shader "Custom/CullingEffect"
 {
   Properties
   {
@@ -13,6 +13,11 @@ Shader "Custom/SolidTextureColor"
       "RenderType" = "Opaque"
       "Queue" = "Geometry"
     }
+
+    //Cull Back
+    Cull Front
+    //Cull Off
+    Blend SrcAlpha OneMinusSrcAlpha
 
     Pass
     {
@@ -71,5 +76,3 @@ Shader "Custom/SolidTextureColor"
     }
   }
 }
-
-//Vertex - Fragment Shaders

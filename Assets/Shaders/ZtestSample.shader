@@ -1,4 +1,4 @@
-Shader "Custom/SolidTextureColor"
+Shader "Custom/ZtestSample"
 {
   Properties
   {
@@ -10,9 +10,16 @@ Shader "Custom/SolidTextureColor"
   {
     Tags
     {
-      "RenderType" = "Opaque"
-      "Queue" = "Geometry"
+      "RenderType" = "Transparent"
+      "Queue" = "Transparent"
     }
+
+    ZTest Greater
+    //ZTest Less
+    //ZTest LEqual
+
+    Cull Off
+    Blend SrcAlpha OneMinusSrcAlpha
 
     Pass
     {
